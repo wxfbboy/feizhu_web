@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if="content">Hello VueJS</p>
+			<p v-else>No VueJS</p>
+			<p v-if="type=='a'">Show A</p>
+			<p v-else-if="type=='b'">Show B</p>
+			<p v-else>Show C</p>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					content:true,
+					type:'a'
+				}
+			});
+		</script>
+	</body>
+</html>
