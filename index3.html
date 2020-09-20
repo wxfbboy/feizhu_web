@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p v-for="(item,index) in arr">{{index}}--{{item.txt}}</p>
+			<p v-for="(item,key,index) in object">{{index}}--{{key}}--{{item}}</p>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					arr:[
+						{txt:'哈恰哈恰玛'},
+						{txt:'kon-kon-ne'},
+						{txt:'呀哈罗'}
+					],
+					object:{
+						name:'はくゃん',
+						age:16
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
