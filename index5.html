@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-on:click="trigger">显示/隐藏</h1>
+			<p v-show="show">隐藏区域</p>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					show:false
+				},
+				methods:{
+					trigger(){
+						this.show=!this.show;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

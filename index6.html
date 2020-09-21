@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="content" />
+			<ul>
+				<li v-for="item in message">{{item}}</li>
+			</ul>
+			<button type="button" v-on:click="trigger">提交</button>
+			<p style="color: red;" v-if="content=='习近平'">这是国家主席</p>
+			<p style="color: red;" v-if="content=='马云'">这是马云</p>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					content:'',
+					message:[]
+				},
+				methods:{
+					trigger(){
+						if(this.content=="习近平"){
+							alert("涉及敏感词,不能添加");
+						}
+						else{
+							this.message.push(this.content);
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
