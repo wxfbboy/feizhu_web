@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="btn">
+			<p>{{text}}</p>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					btn:'',
+					text:'文本框是空的'
+				},
+				watch:{
+					btn:function(){
+						if(this.btn!=""){
+							this.text="您填写了内容";
+						}
+						else{
+							this.text="文本框是空的";
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
