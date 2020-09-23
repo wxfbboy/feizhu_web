@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">{{content}}</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					content:"hello vuejs",
+				},
+				beforeCreate() {
+					console.group("beforeCreate初始化前的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				created(){
+					console.group("created创建完成的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				beforeMount() {
+					console.group("beforeMount挂载前的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				mounted() {
+					console.group("mounted挂载完毕的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				//控制台输入app.content = "Hello reactjs";
+				beforeUpdate(){
+					console.group("beforeUpdate数据更新前的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				updated() {
+					console.group("updated数据更新完毕的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				//控制台输入app.$destory();
+				beforeDestroy() {
+					console.group("beforeDestroy实例销毁前的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				},
+				destroyed() {
+					console.group("destroyed实例销毁后的状态");
+					console.log(this.$el);
+					console.log(this.$data);
+					console.log(this.content);
+				}
+			})
+		</script>
+	</body>
+</html>
