@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.fade-enter{
+				opacity: 0;
+			}
+			.fade-leave-to{
+				opacity: 0;
+			}
+			.fade-enter-active,.fade-leave-active{
+				transition: opacity 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" v-on:click="plus">加</button>
+			<button type="button" v-on:click="odd">减</button>
+			<ul>
+				<transition-group name="fade">		
+					<li v-for="item in num" :key="item">{{item}}</li>
+				</transition-group>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					num:0
+				},
+				methods:{
+					plus(){
+						this.num++;
+					},
+					odd(){
+						this.num--;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

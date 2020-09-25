@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.fade-enter{
+				opacity: 0;
+			}
+			.fade-leave-to{
+				opacity: 0;
+			}
+			.fade-enter-active,.fade-leave-active{
+				transition: opacity 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" v-on:click="trigger">显示/隐藏</button>
+			<transition name="fade">
+				<p v-show="show">隐藏区域</p>
+			</transition>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					show:true
+				},
+				methods:{
+					trigger(){
+						this.show=!this.show;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

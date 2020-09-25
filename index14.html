@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" v-on:click="trigger">显示/隐藏</button>
+			<transition name="fade" 
+				appear 
+				leave-active-class="bounce"
+				enter-active-class="flash"
+				appear-active-class="bounce"
+				:duration="200"
+			>
+				<p v-show="show" class="animated">隐藏区域</p>
+			</transition>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:"#app",
+				data:{
+					show:true
+				},
+				methods:{
+					trigger(){
+						this.show=!this.show;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
