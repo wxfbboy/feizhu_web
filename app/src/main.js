@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './assets/style/reset.css';
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/swiper.esm'
+import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
+SwiperClass.use([Pagination, Mousewheel, Autoplay])
+Vue.use(getAwesomeSwiper(SwiperClass))
+const { Swiper, SwiperSlide } = getAwesomeSwiper(SwiperClass)
+import 'swiper/swiper-bundle.css'
 
 Vue.config.productionTip = false
 

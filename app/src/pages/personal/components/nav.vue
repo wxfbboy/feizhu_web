@@ -30,27 +30,6 @@
     }
   }
 </script>
-<style>
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    background-color: rgb(235, 235, 228, 1);
-    padding: 0 0.4rem;
-    z-index: 9999;
-  }
-
-  .nav img {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
-  .nav p {
-    font-size: 0.26rem;
-    padding-top: 0.04rem;
-  }
+<style scoped="scoped">
+  @import url("../../../assets/style/public.css");
 </style>
