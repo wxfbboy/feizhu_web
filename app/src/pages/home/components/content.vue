@@ -1,26 +1,40 @@
 <template>
-    <div class="content">
-          <div class="content-image">
-              <img src="../../../assets/image/gong1.jpg" />
-          </div>
-          <div class="content-list">
-              <div class="content-name">
-                  大理大理大理大理大理
+  <div style="margin-bottom: 2rem;">
+    <div v-for="(item,index) in home" :key="index">
+        <div class="content">
+              <div class="content-image">
+                  <img :src="item.image" />
               </div>
-              <div class="content-biao">
-                  <p>小标签</p>
+              <div class="content-list">
+                  <div class="content-name">
+                      {{item.name}}
+                  </div>
+                  <div class="content-biao">
+                      <p>{{item.title}}</p>
+                  </div>
               </div>
-          </div>
+        </div>
     </div>
+  </div>
 </template>
 
 <script>
+    import { home } from '../../../api/api.js';
     export default{
         name:'home-content',
         data(){
             return {
-
+                home:[]
             }
+        },
+        mounted() {
+            home({})
+            .then((res)=>{
+                this.home = res.data.results;
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
         }
     }
 </script>

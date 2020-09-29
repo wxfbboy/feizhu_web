@@ -1,22 +1,14 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide>
-        <img src="../../../assets/image/gong1.jpg" />
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../../../assets/image/fengmian.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../../../assets/image/gong1.jpg" />
-    </swiper-slide>
-    <swiper-slide>
-        <img src="../../../assets/image/fengmian.jpeg" />
+    <swiper-slide v-for="(item,index) in banner" :key="index">
+        <img :src="item.image" />
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
 
 <script>
+    import { banner } from '../../../api/api.js';
     export default{
         name:'home-swiper',
            data() {
@@ -29,7 +21,8 @@
                   el: '.swiper-pagination',
                 },
                 loop:true,
-              }
+              },
+              banner:[]
             }
         },
         computed: {
@@ -40,6 +33,14 @@
         mounted() {
           // console.log('Current Swiper instance object', this.swiper)
           // this.swiper.slideTo(3, 1000, false)
+          banner({})
+          .then((res)=>{
+              // console.log(res);
+              this.banner = res.data;
+          })
+          .catch((error)=>{
+              console.log(error);
+          });
         }
     }
 </script>
