@@ -1,6 +1,7 @@
 <template>
   <div style="margin-bottom: 2rem;">
     <div v-for="(item,index) in home" :key="index">
+      <router-link to="/container">
         <div class="content">
               <div class="content-image">
                   <img :src="item.image" />
@@ -14,6 +15,7 @@
                   </div>
               </div>
         </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -83,5 +85,8 @@
       color:#0086b3;
       padding: 0.03rem .1rem;
       border-radius: 1rem;
+    }
+    a{
+      color: black;
     }
 </style>
