@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/home.vue';
 import Personal from '@/pages/personal/personal.vue';
-import Container from '@/pages/container/components/cover.vue';
+import Container from '@/pages/container/container.vue';
 
 Vue.use(Router)
 
