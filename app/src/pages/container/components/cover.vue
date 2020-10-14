@@ -1,13 +1,13 @@
 <template>
     <div class="cover">
         <div class="cover-tipers">
-            <img src="../../../assets/image/gong1.1.jpg" />
+            <img :src="image" />
         </div>
         <div class="cover-title">
-            大理
+            {{this.currlum}}
         </div>
         <div class="cover-image">
-            100张图片
+            {{this.images.length}}张图片
         </div>
         <div class="classify">
             <div>
@@ -33,6 +33,11 @@
 <script>
     export default{
         name:'cover',
+        props:{
+          currlum:String,
+          image:String,
+          images:Array
+        },
         data(){
           return {
           }

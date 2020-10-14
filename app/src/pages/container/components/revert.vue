@@ -11,7 +11,7 @@
                     <img src="../../../assets/image/fanhui.png" />
                 </div>
             </router-link>
-            <p>大理</p>
+            <p>{{this.currlum}}</p>
         </div>
         <div style="height: 18rem;">
 
@@ -22,6 +22,9 @@
 <script>
     export default{
         name:"revert",
+        props:{
+            currlum:String
+        },
         methods:{
             revert:function(){
                 let scrollDistance = document.documentElement.scrollTop || document.body.scrollTop;
@@ -38,7 +41,7 @@
         },
         data(){
             return {
-                showVet:true
+                showVet:true,
             }
         }
     }

@@ -10,3 +10,8 @@ export const banner = () =>{
 export const home = () =>{
     return axios.get((api+ "/homes"))
 }
+
+//攻略列表页
+export const goods = (goodsId) => {
+    return axios.get((api + "/goods/" + goodsId) + '/');
+}
