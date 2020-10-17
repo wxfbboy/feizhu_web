@@ -2,13 +2,15 @@
     <div>
         <Cover :currlum="currlum" :image="image" :images="images" />
         <Revert :currlum="currlum" />
+        <Sliding :images="images" v-show="showSliding" />
     </div>
 </template>
 
 <script>
     import { goods } from '../../api/api.js';
     import Cover from './components/cover.vue';
-    import Revert from './components/revert.vue'
+    import Revert from './components/revert.vue';
+    import Sliding from './components/sliding.vue';
     export default{
         name:"container",
         data(){
@@ -16,12 +18,14 @@
                 productId : 2,
                 currlum : '',
                 image:'',
-                images:[]
+                images:[],
+                showSliding:true
             }
         },
         components:{
             Cover,
-            Revert
+            Revert,
+            Sliding
         },
         mounted:function(){
             goods(this.productId).then((res)=>{

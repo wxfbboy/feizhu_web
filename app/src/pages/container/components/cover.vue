@@ -6,7 +6,7 @@
         <div class="cover-title">
             {{this.currlum}}
         </div>
-        <div class="cover-image">
+        <div class="cover-image" @click="showSliding">
             {{this.images.length}}张图片
         </div>
         <div class="classify">
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+    import Bus from '../../../bus/bus.js';
     export default{
         name:'cover',
         props:{
@@ -41,6 +42,11 @@
         data(){
           return {
           }
+        },
+        methods:{
+           showSliding:function(){
+              Bus.$emit('active-sliding',true);
+           }
         }
     }
 </script>

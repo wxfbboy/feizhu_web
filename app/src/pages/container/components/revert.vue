@@ -13,9 +13,6 @@
             </router-link>
             <p>{{this.currlum}}</p>
         </div>
-        <div style="height: 18rem;">
-
-        </div>
     </div>
 </template>
 
